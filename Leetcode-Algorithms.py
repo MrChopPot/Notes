@@ -1,3 +1,5 @@
+###### EASY ######
+
 ### 1. Two Sum
 
 class Solution:
@@ -9,7 +11,7 @@ class Solution:
                 return(k - 1, nums[k:].index(target - i) + k)
 # The use of .index, and how to def/class in python
 
-### 2. Reverse Integer
+### 7. Reverse Integer
 
 class Solution:
     def reverse(self, x: int) -> int:
@@ -27,7 +29,7 @@ class Solution:
         return num * sign
 # The use of %, // and if/while
 
-### 3. Palindrome Number
+### 9. Palindrome Number
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
@@ -49,7 +51,7 @@ class Solution:
             return False
 # w.r.t Q2
 
-### 4. Roman to Integer
+### 13. Roman to Integer
 
 class Solution:
     def romanToInt(self, s: str) -> int:
@@ -62,7 +64,7 @@ class Solution:
             result += dic[i] * symbol
         return result
 
-### 5. Longest Common Prefix
+### 14. Longest Common Prefix
 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
@@ -77,7 +79,7 @@ class Solution:
 # The use of zip(join 2 tuples together), set,
 # * before var(could be multiple input), pop(jump out)
 
-### 6. Valid Parentheses
+### 20. Valid Parentheses
 
 class Solution:
     def isValid(self, s: str) -> bool:
@@ -91,7 +93,7 @@ class Solution:
         return not stack
 # The use of pop and list/bool
 
-### 7. Merge Two Sorted Lists
+### 21. Merge Two Sorted Lists
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -108,7 +110,7 @@ class Solution:
         return l1 or l2
 # Iterations
 
-### 8. Remove Duplicates from Sorted Array
+### 26. Remove Duplicates from Sorted Array
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
@@ -124,7 +126,7 @@ class Solution:
             return i
 # Iterations
 
-### 9. Remove Element
+### 27. Remove Element
 
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
@@ -136,7 +138,7 @@ class Solution:
                 start +=1
         return start
 
-### 10. Implement strStr()
+### 28. Implement strStr()
 
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
@@ -149,4 +151,51 @@ class Solution:
                 if j == len(needle)-1:
                     return i
         return -1
+
+### 35. Search Insert Position
+
+## 35.1 Duplicate
+
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        def searchInsert(self, nums, target):
+            l , r = 0, len(nums)-1
+            while l <= r:
+                mid=(l+r)/2
+                if nums[mid]== target:
+                    return mid
+                if nums[mid] < target:
+                    l = mid+1
+                else:
+                    r = mid-1
+            return l
+
+## 35.2 w/o Duplicate
+
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        def searchInsert(self, nums, target):
+            l , r = 0, len(nums)-1
+            while l <= r:
+                mid=(l+r)/2
+                if nums[mid] < target:
+                    l = mid+1
+                else:
+                    if nums[mid]== target and nums[mid-1]!=target:
+                        return mid
+                    else:
+                        r = mid-1
+            return l
+
+### 38. Count and Say
+
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        s = '1'
+        for _ in range(n - 1):
+            s = ''.join(str(len(list(group))) + digit
+                        for digit, group in itertools.groupby(s))
+        return s
+
+### 53. Maximum Subarray
 
