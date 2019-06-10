@@ -4,4 +4,4 @@
 
 2. 游戏数据分析
 
-3. (Jupyter Viewer)[https://nbviewer.jupyter.org]
+3. [Jupyter Viewer](https://nbviewer.jupyter.org)
