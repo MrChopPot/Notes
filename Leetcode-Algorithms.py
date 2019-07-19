@@ -9,7 +9,7 @@ class Solution:
             k += 1
             if target - i in nums[k:]:
                 return(k - 1, nums[k:].index(target - i) + k)
-# The use of .index, and how to def/class in python
+# The use of [k:], w.index, and how to def/class in python
 
 ### 7. Reverse Integer
 
@@ -43,7 +43,7 @@ class Solution:
         while n > 0:
             d = n % 10
             n = n // 10
-            num1 = num1 * 10 + dr
+            num1 = num1 * 10 + d
             num2 = num1
         if num2 == x:
             return True
