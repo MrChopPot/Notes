@@ -89,3 +89,18 @@ grep can search for patterns as well; we will explore those in the next course. 
 paste seasonal/autumn.csv seasonal/winter.csv
 ~~~
 
+
+
+#### 3. 
+
+~~~Shell
+# How can I store a command's output in a file?
+head -n 5 seasonal/summer.csv > top.csv
+
+# How can I use a command's output as an input?
+head -n 5 seasonal/winter.csv > top.csv
+tail -n 3 top.csv
+
+
+~~~
+
